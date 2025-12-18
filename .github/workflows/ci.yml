@@ -11,6 +11,10 @@ env:
   PYTHON_VERSION: '3.8'
   NODE_VERSION: '18'
 
+# Limit permissions for security
+permissions:
+  contents: read
+
 jobs:
   # ============================================================================
   # Code Quality Checks
