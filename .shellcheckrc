@@ -1,0 +1,27 @@
+# ============================================================================
+# ShellCheck Configuration
+# Shell script static analysis
+# ============================================================================
+
+# Disable specific checks
+# SC1090: Can't follow non-constant source
+# SC1091: Not following sourced files
+# SC2034: Variable appears unused (OK for exported vars)
+# SC2148: Tips about shebang (we have them)
+
+disable=SC1090,SC1091
+
+# Enable all optional checks
+enable=all
+
+# Set shell dialect
+shell=bash
+
+# Exclude paths
+exclude-dir=.git
+exclude-dir=venv
+exclude-dir=env
+exclude-dir=node_modules
+
+# Source path for includes
+source-path=SCRIPTDIR

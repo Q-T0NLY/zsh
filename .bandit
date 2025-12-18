@@ -1,0 +1,51 @@
+# ============================================================================
+# Bandit Security Scanner Configuration
+# Scans for common security issues in Python code
+# ============================================================================
+
+[bandit]
+# Directories to scan
+targets = .
+
+# Directories to exclude
+exclude_dirs = 
+    /tests/
+    /venv/
+    /env/
+    /.git/
+    /build/
+    /dist/
+
+# Test IDs to skip
+skips = 
+    B101,  # Assert used (OK in tests)
+    B601,  # Paramiko calls (if needed)
+
+# Test IDs to run (empty means all)
+tests = 
+
+# Severity level filter
+level = MEDIUM
+
+# Confidence level filter  
+confidence = MEDIUM
+
+# Output format
+format = screen
+
+# Show code snippets
+show_lineno = True
+show_context = True
+
+# Aggregate results
+aggregate = vuln
+
+# Maximum number of issues
+max_issues = 100
+
+# Exclude specific files
+exclude = 
+    */test_*.py
+    *_test.py
+    */tests/*
+    setup.py
