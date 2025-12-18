@@ -50,8 +50,8 @@ spec:
       # Init containers
       initContainers:
         - name: wait-for-redis
-          image: busybox:1.35
-          command: ['sh', '-c', 'until nc -z redis 6379; do echo waiting for redis; sleep 2; done']
+          image: busybox:1.35-glibc
+          command: ['sh', '-c', 'until wget -q --spider http://redis:6379 2>/dev/null || echo "waiting for redis..."; do sleep 2; done']
           
       # Main container
       containers:

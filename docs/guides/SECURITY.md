@@ -49,7 +49,8 @@ def sanitize_input(user_input: str) -> str:
 Use parameterized queries:
 
 ```python
-# ❌ BAD - SQL Injection vulnerable
+# ❌ BAD - SQL Injection vulnerable (NEVER use this pattern!)
+# This example demonstrates a security vulnerability
 def get_user_bad(username: str):
     query = f"SELECT * FROM users WHERE username = '{username}'"
     return db.execute(query)

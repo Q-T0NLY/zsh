@@ -488,7 +488,10 @@ chmod -R 755 directory/
 # Find process using port
 lsof -i :8000
 
-# Kill process
+# Try graceful termination first
+kill PID
+
+# If process doesn't stop, force kill as last resort
 kill -9 PID
 
 # Or use different port
